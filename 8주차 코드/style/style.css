@@ -1,0 +1,83 @@
+body {
+  background-color: black;
+}
+
+.cls-2 {
+  stroke: blue;
+  stroke-width: 5px;
+}
+
+.svg-item {
+  position: absolute;
+  top: calc(50% - 72px / 2);
+  left: calc(50% - 572px / 2);
+
+  fill: blue;
+  stroke: yellow;
+  stroke-width: 2px;
+}
+
+.svg-item:active {
+  transform: rotate(20deg);
+
+  transition: all 1s ease-in-out;
+}
+
+.text-g,
+.text-n,
+.text-i {
+  fill: blue;
+  stroke: red;
+  stroke-width: 2px;
+
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 900;
+
+  animation-name: draw;
+  animation-duration: 5s;
+}
+
+.text-i:hover,
+.text-n:hover {
+  fill: orange;
+}
+
+@keyframes draw {
+  from {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.rain {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 200;
+  animation-name: rainy;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rainy {
+  0% {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 400;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes rainy2 {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.rain-dash {
+  filter: blur(2px);
+}
